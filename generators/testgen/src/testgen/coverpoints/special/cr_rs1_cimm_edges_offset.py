@@ -1,7 +1,7 @@
 ##################################
 # cr_rs1_cimm_edges_offset.py
 #
-# tjc.challenger1024@jmail.com Mar 2026
+# tjc.challenger1024@gmail.com Mar 2026
 # SPDX-License-Identifier: Apache-2.0
 ##################################
 
@@ -18,7 +18,7 @@ from testgen.formatters.params import generate_random_params
 def make_cr_rs1_cimm_edges_offset(instr_name: str, instr_type: str, coverpoint: str, test_data: TestData) -> list[str]:
     """Generate tests for cross-product of rs1 edge values and immediate edge values with branch offset testing."""
     rs1_edges = get_general_edges(test_data.xlen)
-    cimm_edges = IMMEDIATE_EDGES.imm_5bit[1:]  # exclude imm=0
+    cimm_edges = (-1,) + IMMEDIATE_EDGES.imm_5bit[1:]  # exclude imm=0
 
     test_lines: list[str] = []
 
